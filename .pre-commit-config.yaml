@@ -1,9 +1,16 @@
 repos:
-- repo: https://github.com/dnephin/pre-commit-golang
-  rev: master
-  hooks:
-    - id: go-mod-tidy
-    - id: go-lint
-    - id: go-fmt
-    - id: go-imports
-    - id: go-build
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.1
+    hooks:
+      - id: go-mod-tidy
+      - id: go-lint
+      - id: go-fmt
+      - id: go-imports
+      - id: go-build
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.0.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [ commit-msg ]
+        args: [ feat, fix, chore, test, docs, style, refactor, build ]
